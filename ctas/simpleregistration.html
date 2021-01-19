@@ -1,0 +1,150 @@
+<link
+  href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500,700&amp;subset=cyrillic"
+  rel="stylesheet"
+/>
+<style>
+  .option-select {
+    cursor: pointer;
+  }
+</style>
+<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full my-2">
+  <h1 class="text-center text-3xl mb-8 uppercase">Register to access our articles</h1>
+  <div class="-mx-3 mb-6">
+    <form
+      action="/wp-login.php?action=register"
+      method="post"
+      name="loginform"
+      id="loginform"
+      class="flex flex-wrap"
+    >
+      <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+        <label
+          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="first-name"
+        >
+          First Name
+        </label>
+        <input
+          class="appearance-none block w-full text-gray-600 border border-gray-400 focus:border-black rounded py-3 px-4 mb-3"
+          id="first-name"
+          type="text"
+          name="first-name"
+          placeholder="First Name"
+        />
+      </div>
+      <div class="md:w-1/2 px-3">
+        <label
+          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-last-name"
+        >
+          Last Name
+        </label>
+        <input
+          class="appearance-none block w-full text-gray-600 border border-gray-400 active:border-black rounded py-3 px-4"
+          id="last-name"
+          name="last-name"
+          type="text"
+          placeholder="Last Name"
+        />
+      </div>
+      <div class="-mx-3 md:flex w-full mb-6">
+        <div class="md:w-full px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="email"
+          >
+            Email Address
+          </label>
+          <input
+            class="appearance-none block w-full text-gray-600 border border-gray-400 active:border-black rounded py-3 px-4 mb-3"
+            id="email"
+            type="email"
+            placeholder="example@site.com"
+          />
+        </div>
+      </div>
+      <div class="-mx-3 md:flex w-full mb-4">
+        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2"
+            for="date-of-birth"
+          >
+            Date of Birth
+          </label>
+          <input
+            class="appearance-none block w-full text-gray-600 border border-gray-400 active:border-black rounded py-3 px-4"
+            id="date-of-birth"
+            type="date"
+            placeholder="DD/MM/YYYY"
+          />
+        </div>
+        <div class="md:w-1/2 px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2"
+            for="education"
+          >
+            Education
+          </label>
+          <div class="relative">
+            <select
+              class="appearance-none w-full bg-white border border-gray-400 active:border-black text-gray-600 py-3 px-4 pr-8 rounded"
+              id="education"
+            >
+              <option value="0">Level</option>
+              <option>Less than High School</option>
+              <option>High School</option>
+              <option>University Degree</option>
+              <option>Postgraduate Degree</option>
+            </select>
+          </div>
+        </div>
+        <div class="md:w-1/2 px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2"
+            for="grid-zip"
+          >
+            Interests
+          </label>
+          <div
+            class="block appearance-none w-full bg-white border border-gray-400 active:border-black text-gray-600 py-3 px-4 pr-8 rounded"
+          >
+            <div onclick="showOptions()" class="option-select focus:bg-gray-400">
+              <option>Select an option</option>
+            </div>
+            <div id="options" class="hidden mt-8 flex flex flex-col">
+              <input class="flex-1" type="checkbox" name="news" /> News
+              <input class="flex-1" type="checkbox" name="technology" /> Technology
+              <input class="flex-1" type="checkbox" name="economy" /> Economy
+              <input class="flex-1" type="checkbox" name="africa" /> Africa
+              <input class="flex-1" type="checkbox" name="energy" /> Energy
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full h-12 rounded-md pt-2 bg-red-400 text-white uppercase text-center text-xl font-bold transition duration-500 hover:bg-red-600 hover:text-white"
+      >
+        Register
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  var expanded = false;
+
+  function showOptions() {
+    var options = document.getElementById('options');
+    if (!expanded) {
+      options.style.display = 'block';
+      expanded = true;
+    } else {
+      options.style.display = 'none';
+      expanded = false;
+    }
+  }
+</script>
