@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bottom Bar</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+  <body class="bg-gray-200">
+    <div
+      class="transition-all duration-500 w-screen p-2 bg-red-600 text-center md:text-left flex flex-col md:flex-row md:justify-center md:items-center text-white space-y-2 md:space-x-24"
+      x-data="{selected:null}"
+    >
+      <div x-show="selected == null" class="flex flex-col md:flex-row md:space-x-24">
+        <div class="flex flex-col mb-2">
+          <h2 class="text-xl font-bold lg:text-5xl">Hurry Up, Save 50%</h2>
+          <p class="text-sm">New Year's Deal – get 50% discount on any subscriptions made today!</p>
+        </div>
+        <a
+          href="#"
+          class="mx-auto bg-white w-max flex h-8 my-auto px-8 rounded-l-full rounded-r-full text-red-600 font-bold border-2 hover:bg-transparent hover:border-white hover:text-white transition duration-500 ease-in-out"
+          ng-click="close()"
+        >
+          <span class="m-auto">Subscribe now</span>
+          <svg
+            class="h-5 w-10 md:w-5 pl-2 my-auto"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            /></svg
+        ></a>
+      </div>
+      <div x-show="selected == 0">
+        <div class="flex flex-col md:flex-row text-md md:space-x-2">
+          <span>Hurry Up, Save 50%</span>
+          <span>New Year's Deal – get 50% discount on any subscriptions made today!</span>
+          <u>
+            <a href="#" ng-click="close()">Subscribe now</a>
+          </u>
+        </div>
+      </div>
+      <div
+        class="absolute top-0 right-12 curso-pointer"
+        @click="selected !== 0 ? selected = 0 : selected = null"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          x-show="selected == 0"
+          class="h-5 w-5"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          x-show="selected == null"
+          class="h-5 w-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
