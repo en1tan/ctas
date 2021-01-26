@@ -1,0 +1,310 @@
+/* scaffolding */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.unbutton {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  outline: 0;
+  border: 0;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+p {
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  margin: 0 auto;
+}
+
+b {
+  display: block;
+  font-weight: normal;
+}
+
+i {
+  font-style: normal;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* general style */
+
+.pn-boilerplate {
+  width: 100%;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: rgba(50, 50, 50, 0.8);
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  background-color: [%% backgroundColor %%];
+  border: 1px solid rgba(50, 50, 50, 0.08);
+}
+
+.pn-boilerplate__header {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  height: 64px;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.08);
+  z-index: 100;
+}
+
+.pn-boilerplate__close {
+  width: 63px;
+  height: 100%;
+  margin-left: auto;
+  border-left: 1px solid rgba(50, 50, 50, 0.08);
+  cursor: pointer;
+}
+
+.pn-boilerplate__close-icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill-opacity: 0.3;
+  -webkit-transition: fill-opacity 0.1s linear;
+  transition: fill-opacity 0.1s linear;
+}
+
+.pn-boilerplate__close:hover .pn-boilerplate__close-icon,
+.pn-boilerplate__close:focus .pn-boilerplate__close-icon {
+  fill-opacity: 1;
+}
+
+.pn-boilerplate__body {
+  padding: 62px 72px 56px;
+}
+
+.pn-boilerplate--basic .pn-boilerplate__body {
+  padding: 65px 72px 48px;
+}
+
+.pn-boilerplate__pic {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 40px;
+}
+
+.pn-boilerplate--basic .pn-boilerplate__pic {
+  margin-bottom: 49px;
+}
+
+.pn-boilerplate__accent {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: [%% headerTextColor %%];
+}
+
+.pn-boilerplate--basic .pn-boilerplate__accent {
+  margin-bottom: 16px;
+}
+
+.pn-boilerplate__text {
+  font-size: 14px;
+  line-height: 24px;
+  color: [%% subheaderTextColor %%];
+}
+
+.pn-boilerplate__button {
+  min-width: 204px;
+  padding: 13px 18px 11px;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-size: 11px;
+  line-height: 24px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: [%% callToActionTextColor %%];
+  text-transform: uppercase;
+  background-color: [%% callToActionColor %%];
+  cursor: pointer;
+}
+
+.pn-boilerplate__button::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 9px;
+  margin-left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 0l-.7.7L10.1 4H0v1h10.1L6.8 8.3l.7.7 4.3-4.3.2-.2-.2-.2L7.5 0z' fill='rgb(255, 255, 255)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-transform: translateX(-30px);
+  -ms-transform: translateX(-30px);
+  transform: translateX(-30px);
+}
+
+.pn-boilerplate__button:hover::after,
+.pn-boilerplate__button:focus::after {
+  width: 12px;
+  margin-left: 13px;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.pn-boilerplate--basic .pn-boilerplate__button {
+  margin-top: 43px;
+}
+
+@media (max-width: 564px) {
+  .pn-boilerplate {
+    width: 100%;
+  }
+
+  .pn-boilerplate__body,
+  .pn-boilerplate--basic .pn-boilerplate__body {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pn-boilerplate__body,
+  .pn-boilerplate--basic .pn-boilerplate__body {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .pn-boilerplate__button {
+    width: 100%;
+  }
+}
+
+.pn-boilerplate__header-controls {
+  padding-left: 20px;
+  height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 90px;
+}
+
+.pn-boilerplate__language-selector .language-label {
+  height: auto;
+  font-size: 14px;
+  line-height: 17px;
+  color: #323232;
+}
+
+.pn-boilerplate__account + .pn-boilerplate__close {
+  margin-left: 0;
+}
+
+.pn-boilerplate__account {
+  max-width: 250px;
+  display: inline-block;
+  margin-left: auto;
+  height: 100%;
+}
+
+.pn-boilerplate-account__action {
+  max-width: 60px;
+}
+
+.pn-boilerplate-account__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-left: 1px solid rgba(50, 50, 50, 0.08);
+  outline: none;
+}
+
+.pn-boilerplate-account__btn svg {
+  -webkit-transition: fill-opacity 0.1s linear;
+  transition: fill-opacity 0.1s linear;
+}
+
+.pn-boilerplate-account__btn:hover svg,
+.pn-boilerplate-account__btn:focus svg {
+  fill-opacity: 0.8;
+}
+
+.pn-boilerplate-account__btn.logout {
+  padding-right: 5px;
+}
+
+.link-to-offer-page {
+  color: #fff;
+  text-decoration: none;
+}

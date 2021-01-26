@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piano Template</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500,700&amp;subset=cyrillic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="piano.css" />
+  </head>
+  <body>
+    <config close-button-type="boilerplate"></config>
+    <div class="pn-boilerplate pn-boilerplate--basic stickyOffer modal-overlay">
+      <!-- Close Button Start -->
+      <div class="pn-boilerplate__header">
+        <div class="pn-boilerplate__header-controls">
+          <language-selector class="pn-boilerplate__language-selector"></language-selector>
+        </div>
+        <div class="pn-boilerplate__account pn-boilerplate-account">
+          <boilerplate-login-dropdown></boilerplate-login-dropdown>
+        </div>
+        <button
+          ng-if="isShowBoilerplateCloseButton()"
+          class="pn-boilerplate__close unbutton"
+          type="button"
+          ng-click="close()"
+          external-event="offer-close-modal"
+        >
+          <span class="visually-hidden"><t>Close</t></span>
+          <svg
+            class="pn-boilerplate__close-icon"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M4.586 6L.293 1.707 1.707.293 6 4.586 10.293.293l1.414 1.414L7.414 6l4.293 4.293-1.414 1.414L6 7.414l-4.293 4.293-1.414-1.414L4.586 6z"
+              fill="#0F0F15"
+            />
+          </svg>
+        </button>
+      </div>
+      <!-- Close Button End -->
+      <!-- Body Start -->
+      <div class="pn-boilerplate__body">
+        <img
+          class="pn-boilerplate__pic"
+          ng-if="'[%% headerImage %%]' !== ''"
+          src="[%% headerImage %%]"
+          alt=""
+        />
+        <img
+          class="pn-boilerplate__pic"
+          ng-if="app.image1 && '[%% headerImage %%]' === ''"
+          ng-src="{{app.image1}}"
+          width="72"
+          height="72"
+          alt=""
+        />
+        <svg
+          class="pn-boilerplate__pic"
+          ng-if="!app.image1 && '[%% headerImage %%]' === ''"
+          width="72"
+          height="72"
+          viewBox="0 0 72 72"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0)">
+            <path d="M0 0h72v72H0V0z" fill="url(#pn-paint0_linear)" />
+            <path
+              d="M54 0l54 54H0L54 0z"
+              transform="translate(-36 30)"
+              fill="url(#pn-paint1_linear)"
+            />
+            <path
+              d="M54 0l54 54H0L54 0z"
+              transform="translate(6 42)"
+              fill="url(#pn-paint2_linear)"
+            />
+            <circle cx="5" cy="5" r="5" transform="translate(43 19)" fill="#fff" />
+          </g>
+          <defs>
+            <linearGradient
+              id="pn-paint0_linear"
+              x2="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="matrix(72 -72 46.0328 84.3935 -23.016 29.803)"
+            >
+              <stop stop-color="#D7DDEB" />
+              <stop offset="1" stop-color="#7E9ACB" />
+            </linearGradient>
+            <linearGradient
+              id="pn-paint1_linear"
+              x2="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="matrix(0 54 -108 0 108 0)"
+            >
+              <stop stop-color="#fff" />
+              <stop offset="1" stop-color="#fff" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient
+              id="pn-paint2_linear"
+              x2="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="matrix(0 54 -108 0 108 0)"
+            >
+              <stop stop-color="#fff" />
+              <stop offset="1" stop-color="#fff" stop-opacity="0" />
+            </linearGradient>
+            <clipPath id="clip0">
+              <path fill="#fff" d="M0 0h72v72H0z" />
+            </clipPath>
+          </defs>
+        </svg>
+
+        <b class="pn-boilerplate__accent">[%% header %%]</b>
+        <p class="pn-boilerplate__text">[%% subHeader %%]</p>
+        <button class="pn-boilerplate__button unbutton" type="button" external-event="offer-cta">
+          <a href="[%% callToActionURL %%]" class="link-to-offer-page" target="_blank">
+            [%% callToAction %%]</a
+          >
+        </button>
+
+        <button class="pn-boilerplate__button unbutton" type="button" external-event="offer-cta">
+          <a href="[%% callToActionURL2 %%]" class="link-to-offer-page"> [%% callToAction2 %%]</a>
+        </button>
+      </div>
+      <!-- Body End -->
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.22/angular.min.js"
+      integrity="sha512-OdiLUJdoLghErWFV+mMayvytvOMQ99apSQo33Kf+oKJmkxgcSw0ecCMQzHeZJUGJD4wYU++KQycOOsbWrr1VsQ=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
